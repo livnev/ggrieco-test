@@ -5,17 +5,13 @@ import "ds-test/test.sol";
 import "./GgriecoTest.sol";
 
 contract GgriecoTestTest is DSTest {
-    GgriecoTest test;
+    ShouldNotRevert test;
 
     function setUp() public {
-        test = new GgriecoTest();
+        test = new ShouldNotRevert();
     }
 
-    function testFail_basic_sanity() public {
-        assertTrue(false);
-    }
-
-    function test_basic_sanity() public {
-        assertTrue(true);
+    function test_no_revert() public {
+        assertTrue(test.should_not_revert());
     }
 }
